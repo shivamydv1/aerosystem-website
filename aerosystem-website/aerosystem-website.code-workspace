@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"name": "aerosystem-website",
+			"path": "."
+		},
+		{
+			"name": "apache-maven-3.9.9",
+			"path": "../apache-maven-3.9.9"
+		},
+		{
+			"path": "../db-mail"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "aerosystem-website",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}

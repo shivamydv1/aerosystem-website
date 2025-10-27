@@ -1,0 +1,28 @@
+Abstract
+
+This project implements a user registration system using Spring Boot and MongoDB.
+When a user submits their details through a frontend form, the data is stored in a MongoDB database and a confirmation email is automatically sent to the user.
+
+Objective
+
+The main objectives of this project are:
+To create a user using an HTML form.
+To store user data in MongoDB.
+To send an email notification after successful registration.
+
+Technologies Used
+
+Layer:	Technology
+Backend:	Spring Boot
+Database:	MongoDB
+Frontend:	HTML, CSS
+Email Service:	Spring Mail
+Build Tool: 	Maven
+
+Architecture Flow:
+
+User submits form from frontend.
+Backend API receives and processes the data.
+MongoDB stores user information.
+Email service sends confirmation mail.
+Response is returned to the frontend.
