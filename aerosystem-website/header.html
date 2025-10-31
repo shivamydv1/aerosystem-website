@@ -5,228 +5,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="product.css">
 
 <body>
     <!-- ===== TOP BANNER SECTION ===== -->
-    <div class="top-banner">
-        <div class="banner-content">
-            <div class="banner-links">
-                <a class="banner-link" href="./">
-                    <img class="banner-logo" src="./assets/icons/4.png" alt="logo">
-                </a>
-                <div class="divider"></div>
-                <a class="banner-link" href="./">
-                    <img class="banner-logo" src="./assets/icons/4.png" alt="logo">
-                </a>
-
-            </div>
-        </div>
-
-        <!-- ===== HEADER SECTION ===== -->
-        <header class="header container" id="mainHeader">
-            <a href="/">
-                <img class="header-logo" src="./assets/icons/21.png" alt="Logo">
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="desktop-nav" >
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            Drones
-                            <svg class="nav-arrow" width="16" height="16" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-grid">
-                                <a class="dropdown-item" href="./products/p1.html">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png"
-                                        alt="Agri-Hawk Drone 10">
-                                    <div class="dropdown-title">Agri-Hawk Drone 10</div>
-                                </a>
-                                <a class="dropdown-item" href="./products/p2.html">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png"
-                                        alt="Agri-Hawk Drone 30">
-                                    <div class="dropdown-title">Agri-Hawk Drone 30</div>
-                                </a>
-                                <a class="dropdown-item" href="./products/p3.html">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png"
-                                        alt="Agri-Hawk Drone 50">
-                                    <div class="dropdown-title">Agri-Hawk Drone 50</div>
-                                </a>
-                                <a class="dropdown-item" href="./products/p4.html">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png"
-                                        alt="Agri-Hawk Drone 100">
-                                    <div class="dropdown-title">Agri-Hawk Drone 100</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">
-                            Technology
-                            <svg class="nav-arrow" width="16" height="16" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </a>
-                        <div class="dropdown-menu" style="width: 500px;">
-                            <div class="dropdown-grid"
-                                style="grid-template-columns: 1fr 1fr 1fr; gap: 16px; padding: 24px;">
-                                <a class="dropdown-item" href="/service-network">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png" alt="Service"
-                                        style="object-fit: cover; background-color: #000000;">
-                                    <div class="dropdown-title">Service</div>
-                                </a>
-                                <a class="dropdown-item" href="/charging-network">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png" alt="Charging"
-                                        style="object-fit: cover;">
-                                    <div class="dropdown-title">Charging</div>
-                                </a>
-                                <a class="dropdown-item" href="/showroom-locator">
-                                    <img class="dropdown-img" src="./assets/images/Aero-Product-2-1.png"
-                                        alt="showroom locator" style="object-fit: cover; background-color: #000000;">
-                                    <div class="dropdown-title">Showroom</div>
-                                </a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Form Nav  -->
-            <div class="header-actions">
-                <nav>
-                <a href="dealer-form.html" class="nav-link">Become A Distributor</a> <style height: 12px;></style> 
-            </nav>
-            <!-- end  -->
-             <!-- contact  -->
-              <nav>
-                <a href="contact.html" class="nav-link">Contact us</a> <style height: 12px;></style>
-              </nav>
-                <button class="curvebutton">
-                    Get a Demo
-                    <img alt="Arrow" src="./assets/icons/3.png" style="height: 12px; width: 12px;">
-                </button>
-                <select class="lang-select" id="desktop-lang-select">
-                    <option value="en">English</option>
-                    <option value="hi">हिंदी</option>
-                    <option value="ta">தமிழ்</option>
-                    <option value="te">తెలుగు</option>
-                    <option value="bn">বাংলা</option>
-                    <option value="mr">मराठी</option>
-                    <option value="gu">ગુજરાતી</option>
-                    <option value="kn">ಕನ್ನಡ</option>
-                    <option value="ml">മലയാളം</option>
-                    <option value="pa">ਪੰਜਾਬੀ</option>
-                </select>
-                <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Menu">
-                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                        stroke-linejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-        </header>
+<div class="top-banner">
+  <div class="banner-content">
+    <div class="banner-links">
+      <a class="banner-link" href="./">
+        <img class="banner-logo" src="../assets/icons/4.png" alt="logo">
+      </a>
+      <div class="divider"></div>
+      <a class="banner-link" href="./">
+        <img class="banner-logo" src="../assets/icons/4.png" alt="logo">
+      </a>
     </div>
-
-    <!-- ===== MOBILE MENU OVERLAY ===== -->
-    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
-
-    <!-- ===== MOBILE MENU CONTAINER ===== -->
-    <div id="mobile-menu-container" class="mobile-menu-container">
-        <div class="mobile-menu-header">
-            <a href="/">
-                <img alt="Logo" src="./assets/icons/16.png" style="width: 96px; height: 16px;">
-            </a>
-            <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
-                <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
-                    stroke-linejoin="round" height="28" width="28" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul class="mobile-nav-list">
-                <li><a class="mobile-nav-link" href="/">Home</a></li>
-                <li>
-                    <details class="mobile-nav-details">
-                        <summary class="mobile-nav-summary">
-                            <span>Drones</span>
-                            <span class="mobile-nav-summary-arrow">▼</span>
-                        </summary>
-                        <ul class="mobile-nav-sublist">
-                            <li><a class="mobile-nav-sublink" href="/p1">Agri-Hawk Drone 10</a></li>
-                            <li><a class="mobile-nav-sublink" href="/p2">Agri-Hawk Drone 30</a></li>
-                            <li><a class="mobile-nav-sublink" href="/p3">Agri-Hawk Drone 50</a></li>
-                            <li><a class="mobile-nav-sublink" href="/p4">Agri-Hawk Drone 100</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details class="mobile-nav-details">
-                        <summary class="mobile-nav-summary">
-                            <span>Technology</span>
-                            <span class="mobile-nav-summary-arrow">▼</span>
-                        </summary>
-                        <ul class="mobile-nav-sublist">
-                            <li><a class="mobile-nav-sublink" href="/showroom-locator">Showroom</a></li>
-                            <li><a class="mobile-nav-sublink" href="/service-network">Service</a></li>
-                            <li><a class="mobile-nav-sublink" href="/charging-network">Charging</a></li>
-                        </ul>
-                    </details>
-                </li>
-                <li>
-                    <details class="mobile-nav-details">
-                        <summary class="mobile-nav-summary">
-                            <span>Others</span>
-                            <span class="mobile-nav-summary-arrow">▼</span>
-                        </summary>
-                        <ul class="mobile-nav-sublist">
-                            <li><a class="mobile-nav-sublink" href="/blogs">Blogs</a></li>
-                            <li><a class="mobile-nav-sublink" href="/news">News</a></li>
-                            <li><a class="mobile-nav-sublink" href="/product-reviews">Product Reviews</a></li>
-                            <li><a class="mobile-nav-sublink" href="/about-us">About Us</a></li>
-                            <li><a class="mobile-nav-sublink" href="/contact-us">Contact Us</a></li>
-                        </ul>
-                    </details>
-                </li>
-            </ul>
-        </nav>
-        <div class="mobile-menu-footer">
-            <button class="curvebutton">
-                Get a Demo
-                <img alt="Arrow" src="./assets/icons/3.png" style="height: 16px; width: 16px; margin-left: 8px;">
-            </button>
-            <select class="mobile-lang-select" id="mobile-lang-select">
-                <option value="en">English</option>
-                <option value="hi">हिंदी</option>
-                <option value="ta">தமிழ்</option>
-                <option value="te">తెలుగు</option>
-                <option value="bn">বাংলা</option>
-                <option value="mr">मराठी</option>
-                <option value="gu">ગુજરાતી</option>
-                <option value="kn">ಕನ್ನಡ</option>
-                <option value="ml">മലയാളം</option>
-                <option value="pa">ਪੰਜਾਬੀ</option>
-            </select>
-        </div>
-    </div>
-      
-   <div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="dealer-form.html">Become A Distributor</a>
-    <a href="contact.html">Contact</a>
-  </nav>
   </div>
+
+  <!-- ===== HEADER SECTION ===== -->
+  <header class="header container" id="mainHeader">
+    <a href="/">
+      <img class="header-logo" src="../assets/icons/21.png" alt="Logo">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link" href="/">
+            Drones
+            <svg class="nav-arrow" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-grid">
+              <a class="dropdown-item" href="./products/p1.html">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Agri-Hawk Drone 10">
+                <div class="dropdown-title">Agri-Hawk Drone 10</div>
+              </a>
+              <a class="dropdown-item" href="./products/p2.html">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Agri-Hawk Drone 30">
+                <div class="dropdown-title">Agri-Hawk Drone 30</div>
+              </a>
+              <a class="dropdown-item" href="./products/p3.html">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Agri-Hawk Drone 50">
+                <div class="dropdown-title">Agri-Hawk Drone 50</div>
+              </a>
+              <a class="dropdown-item" href="./products/p4.html">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Agri-Hawk Drone 100">
+                <div class="dropdown-title">Agri-Hawk Drone 100</div>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            Technology
+            <svg class="nav-arrow" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <div class="dropdown-menu" style="width: 500px;">
+            <div class="dropdown-grid" style="grid-template-columns: 1fr 1fr 1fr; gap: 16px; padding: 24px;">
+              <a class="dropdown-item" href="/service-network">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Service"
+                  style="object-fit: cover; background-color: #000000;">
+                <div class="dropdown-title">Service</div>
+              </a>
+              <a class="dropdown-item" href="/charging-network">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Charging"
+                  style="object-fit: cover;">
+                <div class="dropdown-title">Charging</div>
+              </a>
+              <a class="dropdown-item" href="/showroom-locator">
+                <img class="dropdown-img" src="../assets/images/Aero-Product-2-1.png" alt="Showroom"
+                  style="object-fit: cover; background-color: #000000;">
+                <div class="dropdown-title">Showroom</div>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Right actions -->
+    <div class="header-actions">
+      <nav>
+        <a href="dealer-form.html" class="nav-link">Become A Distributor</a>
+      </nav>
+      <nav>
+        <a href="contact.html" class="nav-link">Contact us</a>
+      </nav>
+      
+      <button class="curvebutton">
+        Get a Demo
+        <img alt="Arrow" src="../assets/icons/3.png" style="height: 12px; width: 12px;">
+      </button>
+      <select class="lang-select" id="desktop-lang-select">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="ta">தமிழ்</option>
+        <option value="te">తెలుగు</option>
+        <option value="bn">বাংলা</option>
+        <option value="mr">मराठी</option>
+        <option value="gu">ગુજરાતી</option>
+        <option value="kn">ಕನ್ನಡ</option>
+        <option value="ml">മലയാളം</option>
+        <option value="pa">ਪੰਜਾਬੀ</option>
+      </select>
+      <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Menu">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+          stroke-linejoin="round" height="32" width="32" xmlns="http://www.w3.org/2000/svg">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+</div>
+
 </body>
 </html>
+
