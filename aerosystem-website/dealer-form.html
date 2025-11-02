@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dealer Form - Aerosystem</title>
+
+
   <!-- <link rel="stylesheet" href="zz.css"> -->
    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
@@ -143,6 +145,8 @@
   <!-- Header Placeholder -->
   <div id="header-placeholder"></div>
 
+  <!-- Banner Placeholder -->
+  <div id="banner-placeholder"></div>
   <!-- Dealer Form -->
   <section class="dealer-form-section">
     <div class="form-container">
@@ -377,8 +381,13 @@
         <button type="submit">Submit</button>
       </form>
     </div>
+   
   </section>
 
+      <!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<!-- Header -->
   <script>
     fetch('header.html')
       .then(response => response.text())
@@ -386,6 +395,47 @@
         document.getElementById('header-placeholder').innerHTML = data;
       })
       .catch(error => console.error('Header load error:', error));
+
+      
   </script>
+
+  <!-- Footer -->
+  <script>
+   fetch('Footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Footer load error:', error)); 
+  </script>
+
+
+  <!--  Load jQuery and Slick once -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Banner -->
+<script>
+  fetch('Banner.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('banner-placeholder').innerHTML = data;
+
+      // Wait a moment for banner HTML to be inserted, then initialize slick
+      setTimeout(() => {
+        if (window.$ && $('.hero-slider').length) {
+          $('.hero-slider').slick({
+            autoplay: true,
+            autoplaySpeed: 4000,
+            fade: true,
+            arrows: true,
+            dots: false,
+            prevArrow: $('.hero-prev'),
+            nextArrow: $('.hero-next')
+          });
+        }
+      }, 300);
+    })
+    .catch(error => console.error('Banner load error:', error));
+</script>
 </body>
 </html>
