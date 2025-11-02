@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spider UAV - Contact & Message</title>
+    <title>HawkAerosystem</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -67,7 +67,7 @@
         /* Contact Section */
      .contact {
     background: #f8f7fb;
-    padding: 100px 20px 80px;
+    padding: 60px-20px 20px;
     text-align: center;
 }
 
@@ -86,7 +86,7 @@
     gap: 30px;
 }
 
-.contact-item {
+.contact-items {
     background: #fff;
     border: 1.5px solid #e3def0;
     border-radius: 12px;
@@ -97,41 +97,37 @@
     transition: all 0.3s ease;
 }
 
-.contact-item:hover {
+.contact-items:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.contact-item .icon {
+.contact-items .icon {
     font-size: 26px;
     margin-bottom: 12px;
 }
 
-.contact-item .info h3 {
+.contact-items .info h3 {
     font-size: 16px;
     font-weight: 700;
     color: #1b103b;
     margin-bottom: 6px;
 }
 
-.contact-item .info p {
+.contact-items .info p {
     font-size: 16px;
     color: #1b103b;
     line-height: 1.4;
 }
 
-        
-       
-
-        
 
         /* Message Section */
         .message-us {
     background: #fff;
-    padding: 100px 20px;
+    padding: 0px 0px;
     display: flex;
     justify-content: center;
-    margin-top: -20px;
+    margin-top: -40px;
 }
 
 .message-us .form-container {
@@ -140,7 +136,7 @@
     border-radius: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     padding: 50px 60px;
-    width: 900px;
+    width: 1100px;
     text-align: left;
 }
 
@@ -162,7 +158,7 @@
 .form-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
 }
 
 .form-group {
@@ -299,6 +295,9 @@ button {
     <!-- Header -->
 <div id="header-placeholder"></div>
 
+  <!-- Banner Placeholder -->
+  <div id="banner-placeholder"></div>
+
      <!-- <div id="header"></div>
     <header class="top-bar">
         <p>📧 support@spideruav.com</p>
@@ -314,21 +313,21 @@ button {
 <section class="contact">
     <h1>Contact Us</h1>
     <div class="contact-box">
-        <div class="contact-item">
+        <div class="contact-items">
             <div class="icon">💬</div>
             <div class="info">
                 <h3>Phone/WhatsApp</h3>
-                <p>+4478783331</p>
+                <p>+44203540502</p>
             </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-items">
             <div class="icon">✉️</div>
             <div class="info">
                 <h3>Email</h3>
-                <p>info@hawkaerosystem.com</p>
+                <p>info.hawkaerosystem.co.uk</p>
             </div>
         </div>
-        <div class="contact-item">
+        <div class="contact-items">
             <div class="icon">🌐</div>
             <div class="info">
                 <h3>Address</h3>
@@ -528,6 +527,9 @@ button {
     </section>
 
     <!-- <a href="https://wa.me/8618549914153" class="whatsapp-float">💬</a> -->
+
+          <!-- Footer -->
+<div id="footer-placeholder"></div>
     <!-- Header -->
 <script>
   fetch('header.html')
@@ -539,7 +541,43 @@ button {
 </script>
 
 
+<script>
+  // Footer
+   fetch('Footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Footer load error:', error)); 
+  </script>
 
+    <!--  Load jQuery and Slick once -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!-- Banner -->
+<script>
+  fetch('Banner.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('banner-placeholder').innerHTML = data;
+
+      // Wait a moment for banner HTML to be inserted, then initialize slick
+      setTimeout(() => {
+        if (window.$ && $('.hero-slider').length) {
+          $('.hero-slider').slick({
+            autoplay: true,
+            autoplaySpeed: 4000,
+            fade: true,
+            arrows: true,
+            dots: false,
+            prevArrow: $('.hero-prev'),
+            nextArrow: $('.hero-next')
+          });
+        }
+      }, 300);
+    })
+    .catch(error => console.error('Banner load error:', error));
+</script>
 </body>
 
 </html>
