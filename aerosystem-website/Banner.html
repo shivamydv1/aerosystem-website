@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner</title>
+    <!--  Slick Slider CSS -->
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+  />
+
+    <!--  jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick Slider JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+     <!-- ===== HERO SLIDER SECTION ===== -->
+        <div class="hero-slider-container" id="mainBanner">
+            <div class="hero-slider">
+                <!-- Slide 1: Video -->
+                <!-- <div class="hero-slide">
+                    <div class="hero-video-container">
+                        <iframe class="hero-video"
+                            src="https://www.youtube.com/embed/U-HQYcVRBpw?autoplay=1&mute=1&loop=1&playlist=cJGv18QlgFQ&modestbranding=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1"
+                            title="Turbo powered by Euler" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
+                        <button class="hero-control" aria-label="Unmute video">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path d="M7 9v6h4l5 5V4l-5 5H7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div> -->
+
+                <!-- Slide 2: Image -->
+                <div class="hero-slide">
+                    <img src="./assets/images/aero-product-2-2.png" alt="Agri-Hawk Drone" class="hero-image">
+                    <button class="hero-control" aria-label="View image">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30"
+                            width="30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9v6h-6v6h-6v-6H3V9h6V3h6v6h6zm-10 4v4h2v-4h4v-2h-4V7h-2v4H7v2h4z"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Slide 3: Video -->
+                <!-- <div class="hero-slide">
+                    <div class="hero-video-container">
+                        <iframe class="hero-video"
+                            src="https://www.youtube.com/embed/cJGv18QlgFQ?autoplay=1&mute=1&loop=1&modestbranding=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&playsinline=1&enablejsapi=1"
+                            title="Euler Motors Technology" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen loading="lazy"
+                            sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
+                        <button class="hero-control" aria-label="Unmute video">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                height="30" width="30" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path d="M7 9v6h4l5 5V4l-5 5H7z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div> -->
+
+                <!-- Slide 4: Image -->
+                <div class="hero-slide">
+                    <img src="./assets/images/Aero-Product-2-1.png" alt="Agri-Hawk Drone" class="hero-image">
+                    <button class="hero-control" aria-label="View image">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="30"
+                            width="30" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 9v6h-6v6h-6v-6H3V9h6V3h6v6h6zm-10 4v4h2v-4h4v-2h-4V7h-2v4H7v2h4z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Hero Slider Navigation -->
+            <button class="hero-nav hero-prev">←</button>
+            <button class="hero-nav hero-next">➜</button>
+
+            <!-- Hero Slider Dots -->
+            <div class="hero-dots">
+                <button class="hero-dot active" data-slide="0"></button>
+                <button class="hero-dot" data-slide="1"></button>
+                <button class="hero-dot" data-slide="2"></button>
+                <button class="hero-dot" data-slide="3"></button>
+            </div>
+        </div>
+
+        
+
+        <script>
+    $(document).ready(function () {
+      // Initialize Slick for Hero Slider
+      $('.hero-slider').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 700,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000,
+        fade: true,
+        cssEase: 'linear',
+        prevArrow: $('.hero-prev'),
+        nextArrow: $('.hero-next')
+      });
+
+      // Dot navigation manually synced
+      $('.hero-dot').on('click', function () {
+        var slideIndex = $(this).data('slide');
+        $('.hero-slider').slick('slickGoTo', slideIndex);
+      });
+
+      $('.hero-slider').on('afterChange', function (event, slick, currentSlide) {
+        $('.hero-dot').removeClass('active');
+        $('.hero-dot[data-slide="' + currentSlide + '"]').addClass('active');
+      });
+    });
+  </script>
+</body>
+</html>
