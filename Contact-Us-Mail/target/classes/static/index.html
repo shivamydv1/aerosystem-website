@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spider UAV - Contact & Message</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #1b103b;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Top Header */
+        .top-bar {
+            background: #24133c;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 20px;
+            font-size: 14px;
+        }
+
+        .flag {
+            width: 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: #fff;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        .menu {
+            background: none;
+            border: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #1b103b;
+        }
+
+        /* Section Common */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #f8f7fb;
+            padding: 40px 20px;
+        }
+
+
+        /* Contact Section */
+     .contact {
+    background: #f8f7fb;
+    padding: 100px 20px 80px;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 44px;
+    font-weight: 700;
+    color: #1b103b;
+    margin-bottom: 60px;
+}
+
+.contact-box {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.contact-item {
+    background: #fff;
+    border: 1.5px solid #e3def0;
+    border-radius: 12px;
+    padding: 30px 40px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-item .icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.contact-item .info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1b103b;
+    margin-bottom: 6px;
+}
+
+.contact-item .info p {
+    font-size: 16px;
+    color: #1b103b;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+        /* Message Section */
+        .message-us {
+    background: #fff;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.message-us .form-container {
+    background: #fff;
+    border: 1.5px solid #e3def0;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 50px 60px;
+    width: 900px;
+    text-align: left;
+}
+
+.message-us h1 {
+    text-align: center;
+    font-size: 100px;
+    font-weight: 800;
+    color: #1b103b;
+    margin-bottom: 10px;
+}
+
+.message-us p {
+    text-align: center;
+    font-size: 16px;
+    color: #3b2b68;
+    margin-bottom: 50px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #1b103b;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.form-group label span {
+    color: red;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1.5px solid #3b2b68;
+    border-radius: 8px;
+    outline: none;
+    color: #1b103b;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #8d86a9;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(94, 62, 252, 0.3);
+}
+
+.submit-btn {
+    display: block;
+    margin: 40px auto 0;
+    background: #1d173e;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #c6c4c9;
+}
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 2px solid #d4cae4;
+    border-radius: 10px;
+    resize: none;
+    height: 120px;
+    font-family: 'Poppins', sans-serif;
+}
+
+textarea:focus {
+    border-color: #1b1b1b;
+}
+
+section {
+    background: #f8f7fb;
+    padding: 80px 40px;
+}
+
+.contact h1,
+.form-section h1 {
+    font-size: 90px;
+}
+
+.form-section {
+    background: #fff;
+}
+
+button {
+    background: #2a114d;
+    font-weight: 600;
+}
+
+
+
+    </style>
+</head>
+
+
+<body>
+<link rel="stylesheet" href="style.css">
+<!-- Header -->
+<!--<div id="header-placeholder"></div>-->
+
+<!-- <div id="header"></div>
+<header class="top-bar">
+   <p>📧 support@spideruav.com</p>
+   <img src="https://flagcdn.com/w40/us.png" alt="Language" class="flag">
+</header>
+
+<nav class="navbar">
+   <img src="https://spideruav.com/wp-content/uploads/2022/12/spider-i-logo.png" alt="Spider UAV" class="logo">
+   <button class="menu">&#9776;</button>
+</nav> -->
+<!-- Slide 1 -->
+<!-- Contact Section -->
+<section class="contact">
+    <h1>Contact Us</h1>
+    <div class="contact-box">
+        <div class="contact-item">
+            <div class="icon">💬</div>
+            <div class="info">
+                <h3>Phone/WhatsApp</h3>
+                <p>+4478783331</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div class="info">
+                <h3>Email</h3>
+                <p>info@hawkaerosystem.com</p>
+            </div>
+        </div>
+        <div class="contact-item">
+            <div class="icon">🌐</div>
+            <div class="info">
+                <h3>Address</h3>
+                <p>71-75 Shelton Street, Covent Garden, London, WC2H 9JQ</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+<!-- Slide 2: Message -->
+<section class="message-us">
+    <div class="form-container">
+        <h1>Message Us</h1>
+        <p>Reach Out and We’ll get back to you shortly.</p>
+        <form action="#" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Name <span>*</span></label>
+                    <input type="text" placeholder="Your Name..." required>
+                </div>
+                <div class="form-group">
+                    <label>Email <span>*</span></label>
+                    <input type="email" placeholder="Business Email..." required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Phone/WhatsApp</label>
+                    <input type="text" placeholder="Phone/WhatsApp">
+                </div>
+                <div class="form-group">
+                    <label>Company</label>
+                    <input type="text" placeholder="Company Name...">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Country</label>
+                    <select>
+                        <option value="">Select Country</option>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Laos">Laos</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="North Korea">North Korea</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russia">Russia</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tanzania">Tanzania</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="United States">United States</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Are You Using a Drone? <span>*</span></label>
+                    <select required>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Message <span>*</span></label>
+                <textarea rows="4" placeholder="Leave Your Message *" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+</section>
+
+<!-- <a href="https://wa.me/8618549914153" class="whatsapp-float">💬</a> -->
+<!-- Header -->
+<!--<script>-->
+<!--    fetch('header.html')-->
+<!--      .then(response => response.text())-->
+<!--      .then(data => {-->
+<!--        document.getElementById('header-placeholder').innerHTML = data;-->
+<!--      })-->
+<!--      .catch(error => console.error('Header load error:', error));-->
+<!--</script>-->
+
+<!-- ===== FOOTER SECTION ===== -->
+<footer class="footer" id="mainFooter">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <a href="/">
+                        <img src="./assets/icons/22.png" alt="Logo">
+                    </a>
+                </div>
+
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="./assets/icons/17.png" alt="Logo">
+                        </div>
+                        <div class="contact-text" >
+                            71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
+                        </div>
+                    </div>
+                    <!-- <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="./assets/icons/18.png" alt="Logo">
+                        </div>
+                        <div class="contact-text">
+                            http://www.hawkaerosystem.co.uk
+                        </div>
+                    </div> -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="./assets/icons/19.png" alt="Logo">
+                        </div>
+                        <div class="contact-text">
+                            +44203540502
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <img src="./assets/icons/20.png" alt="Logo">
+                        </div>
+                        <div class="contact-text">
+                            info.hawkaerosystem.co.uk
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Drones</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="/Agri-Hawk100">Agri-Hawk 100</a></li>
+                    <li class="footer-link"><a href="/Agri-Hawk50">Agri-Hawk 50</a></li>
+                    <li class="footer-link"><a href="/Agri-Hawk30">Agri-Hawk 30</a></li>
+                    <li class="footer-link"><a href="/Agri-Hawk10">Agri-Hawk 10</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Support</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="https://HelpCenter">Help Center</a></li>
+                    <li class="footer-link"><a href="https://ServiceMaintenance">Service & Maintenance</a></li>
+                    <li class="footer-link"><a href="https://FAQs">FAQs</a></li>
+                    <li class="footer-link"><a href="https://Contactus">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Legal</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="/PrivacyPolicy">Privacy Policy</a></li>
+                    <li class="footer-link"><a href="/RefundPolicy">Refund Policy</a></li>
+                    <li class="footer-link"><a href="/Terms">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3 class="footer-heading">Download</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="/Download">Download Agri-Hawk OS</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <div class="social-heading">Follow us on our Socials to get updated</div>
+                <div class="social-icons">
+                    <a class="social-icon" target="_blank" rel="noopener noreferrer"
+                       href="https://www.instagram.com/">
+                        <img src="./assets/icons/12.png" alt="Instagram">
+                    </a>
+                    <a class="social-icon" target="_blank" rel="noopener noreferrer"
+                       href="https://www.linkedln.com/">
+                        <img src="./assets/icons/13.png" alt="Linkedln">
+                    </a>
+                    <a class="social-icon" target="_blank" rel="noopener noreferrer" href="https://x.com/">
+                        <img src="./assets/icons/14.png" alt="X">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>Copyright © 2025 Euler Motors</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>
